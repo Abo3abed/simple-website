@@ -1,0 +1,130 @@
+:root {
+  --blur: 10px;
+  --light-bg: rgba(255, 255, 255, 0.2);
+  --dark-bg: rgba(0, 0, 0, 0.2);
+  --grid-repeat: auto-fit;
+  --grid-fractions: minmax(320px, 1fr);
+  --grid-gap: 0.5em;
+  --box-shadow-color: rgba(46, 54, 68, 0.03);
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.root {
+  background: url("./programmer.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-auto-flow: column;
+  height: 100%;
+  grid-gap: var(--grid-gap);
+  justify-content: center;
+  align-content: center;
+}
+
+.main-text {
+  color: white;
+  position: absolute;
+  top: 0;
+}
+
+.project-title {
+  grid-column: 1;
+}
+
+.project-description {
+  grid-column: 1;
+  line-height: 2;
+}
+
+.project-img {
+  grid-column: 1;
+  align-self: center;
+  display: block;
+  max-width: 100%;
+}
+
+.content {
+  display: grid;
+  color: white;
+  transform: translateY(150%);
+  transition: transform 400ms ease-in-out;
+}
+
+.container:hover .content {
+  transform: translateY(0);
+}
+
+.container {
+  display: flex;
+  position: absolute;
+  background-color: var(--dark-bg);
+  left: 10%;
+  top: 15%;
+  overflow: hidden;
+  max-width: 700px;
+  height: 550px;
+  padding: 1em;
+  border-radius: 1em;
+  -webkit-backdrop-filter: blur(var(--blur));
+  backdrop-filter: blur(var(--blur));
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px var(--box-shadow-color);
+}
+
+.navbar {
+  color: white;
+  position: absolute;
+  right: 10%;
+  top: 5%;
+}
+
+.bottom-navbar {
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.bottom-navbar > ul,
+.navbar > ul {
+  display: flex;
+}
+
+.bottom-navbar li {
+  list-style: none;
+  margin: 50px;
+  cursor: pointer;
+}
+
+.navbar li {
+  list-style: none;
+  cursor: pointer;
+  margin: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar li:hover {
+  color: #ffa62b;
+}
+
+.bottom-navbar li:hover {
+  color: #ffa62b;
+  transform: scale(1.5);
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
